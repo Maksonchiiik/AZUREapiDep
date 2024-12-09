@@ -68,5 +68,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'AzureRest20'
-          slot-name: 'hccecdbmg2d9hnac'
+          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3CCD0442D310404688B8E8FDA3B3291F }}
