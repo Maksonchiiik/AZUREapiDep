@@ -7,10 +7,9 @@ from .settings import BASE_DIR
 # that Azure automatically creates for us.
 
 
-ALLOWED_HOSTS = [os.environ.get('WEBSITE_HOSTNAME', 'localhost')]
-CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('WEBSITE_HOSTNAME', 'localhost')]
-DEBUG = os.environ.get('DEBUG', 'False').lower() in ['true', '1', 'yes']
-
+ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
+CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
+DEBUG = False
 
 # WhiteNoise configuration
 MIDDLEWARE = [
